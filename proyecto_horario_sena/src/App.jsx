@@ -12,10 +12,11 @@ import { SedePage } from "./pages/admin/sede/SedePage";
 import { InstructorPage } from "./pages/admin/instructor/instructorPage";
 import { TematicaPage } from "./pages/admin/tematica/tematicaPage";
 import { FichaPage } from "./pages/admin/ficha/FichaPage";
-import { TrimestrePage } from "./pages/admin/trimestre/trimestrePage";
+import { TrimestrePage } from "./pages/admin/trimestre/TrimestrePage";
 import { HomePage } from "./pages/admin/home/home";
 import { HorarioPage } from "./pages/admin/horario/horario";
-import { ProgramaPage } from "./pages/admin/programa/programa";
+// import { ProgramaPage } from "./pages/admin/programa/ProgramaPage";
+import { ProgramaPage } from "./pages/admin/programa/ProgramaPage"
 
 function App() {
 
