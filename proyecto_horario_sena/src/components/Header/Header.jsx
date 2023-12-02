@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header className=' h-[7vh] md:h-[10vh] xl:ml-1 bg-primary p-8 flex items-center justify-between xl:rounded-bl shadow-xl'>
       <Link to="/">
-        <img className='object-cover h-12' src="./logoSenaCort.png" alt="Logo Sena" />
+        <img className='object-cover h-12' src="/logoSenaCort.png" alt="Logo Sena" />
       </Link>
         <div className='flex items-center gap-4 text-3xl text-secondary-100'>
           <Link to='/'>

@@ -16,6 +16,7 @@ import { TrimestrePage } from "./pages/admin/trimestre/trimestrePage";
 import { HomePage } from "./pages/admin/home/home";
 import { HorarioPage } from "./pages/admin/horario/horario";
 import { ProgramaPage } from "./pages/admin/programa/programa";
+import { JornadaPage } from "./pages/admin/jornada/jornadaPage";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/index" element={<LayoutAdmin/>}>
             <Route path="home" element={<HomePage/>}/>
             <Route path="sede" element={<SedePage/>}/>
+            <Route path="jornada" element={<JornadaPage/>}/>
             <Route path="instructor" element={<InstructorPage/>}/>
             <Route path="tematica" element={<TematicaPage/>}/>
             <Route path="ficha" element={<FichaPage/>}/>
