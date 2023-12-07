@@ -145,28 +145,31 @@
 
 
 import { BloqueData } from "./data/sendRequest";
-import { RiMoreFill } from "react-icons/ri";
+import { MenuHorario } from "./component/select";
+import { BasicPopover } from "./component/popover"; 
 
 export const HorarioPage = () => {
   const datosBloque = BloqueData();
-  console.log("data", datosBloque);
   
   return (
-    <div className="flex flex-wrap items-center gap-4 justify-center">
-      {datosBloque.map((bloque) => ( // Cambio aquí
-        <div className="flex flex-col justify-center items-center gap-4 bg-gray-300 p-4 rounded-md" key={bloque.idBloque}>
-          <h1>Bloque Numero: {bloque.idBloque}</h1>  
-          <button>
-           <RiMoreFill />
-          </button>
-         {/* <h1>Ambiente:{bloque.ambienteInfo ? bloque.ambienteInfo.numeroAmbiente : 'No se encontró'}</h1>
-         <h1>Ficha:{bloque.fichaInfo ? bloque.fichaInfo.nombreFicha : 'No se encontró'}</h1>
-         <h1>Jornada:{bloque.jornadaInfo ? bloque.jornadaInfo.nombreJornada : 'No se encontró'}</h1>
-         <h1>Sede:{bloque.sedeInfo ? bloque.sedeInfo.nombreSede : 'No se encontró'}</h1>
-         <h1>Tematica:{bloque.tematicaInfo ? bloque.tematicaInfo.nombreTematica : 'No se encontró'}</h1>
-         <h1>Trimestre:{bloque.trimestreInfo ? bloque.trimestreInfo.nombreTrimestre : 'No se encontró'}</h1> */}
-        </div>
-      ))}
-    </div>
+    <>
+    <h1 className="py-5 text-4xl font-bold pl-5 text-primary">BLOQUES({datosBloque.length})</h1>
+      <div className="border rounded-lg p-3 grid grid-cols-2 gap-4 ">
+        {datosBloque.map((bloque) => ( // Cambio aquí
+          <div className="flex items-center justify-around p-4 bg-gray-100 rounded shadow" key={bloque.idBloque}>
+            <BasicPopover
+              ficha={bloque.fichaInfo ? bloque.fichaInfo.nombreFicha : 'No se encontró'}
+              ambiente={bloque.ambienteInfo ? bloque.ambienteInfo.numeroAmbiente : 'No se encontró'}
+              jornada={bloque.jornadaInfo ? bloque.jornadaInfo.nombreJornada : 'No se encontró'}
+              sede={bloque.sedeInfo ? bloque.sedeInfo.nombreSede : 'No se encontró'}
+              tematica={bloque.tematicaInfo ? bloque.tematicaInfo.nombreTematica : 'No se encontró'}
+              trimestre={bloque.trimestreInfo ? bloque.trimestreInfo.nombreTrimestre : 'No se encontró'}
+            />
+            <h1 className="font-semibold text-xl uppercase">Bloque {bloque.idBloque}</h1>  
+          <MenuHorario/>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
